@@ -185,3 +185,189 @@ export let DataTypesQuest = [
     urduExplanation: "`null == undefined` true deta hai kyunke dono khaali hotay hain, lekin `===` type bhi check karta hai is liye false aata hai."
   }
 ];
+
+export let CoercionQuest = [
+  {
+    question: "1. Concatenate a number and a string, then log the type.",
+    code: `var a = 1, b = 'a';\nvar cont = a + b;\nconsole.log(typeof(cont));`,
+    englishExplanation: "Number 1 is coerced to a string and added to 'a', resulting in '1a' of type string.",
+    urduExplanation: "1 ko string mein convert karke 'a' ke saath jora gaya, result '1a' bana jo string type ka hai."
+  },
+  {
+    question: "2. Use + and - with a number and string.",
+    code: `var a = 1, b = 'a';\nvar sum = a + b;\nvar sub = a - b;\nconsole.log(sum);\nconsole.log(sub);`,
+    englishExplanation: "+ converts number to string, - tries numeric conversion but fails, giving NaN.",
+    urduExplanation: "+ number ko string bana deta hai, - string ko number banane ki koshish karta hai lekin fail hota hai is liye NaN deta hai."
+  },
+  {
+    question: "3. Use template literals to combine values.",
+    code: `var a = 'Ali', b = 23;\nvar literals = \`\${a} age is \${b}\`;\nconsole.log(literals);`,
+    englishExplanation: "Template literals allow variables to be embedded inside strings using `${}`.",
+    urduExplanation: "Template literals mein \`${}\` ka use hota hai jisme variables string ke andar direct lagte hain."
+  },
+  {
+    question: "4. Use string numbers with arithmetic operations.",
+    code: `console.log('5' + 5);\nconsole.log('5' - 2);\nconsole.log('5' * 2);\nconsole.log('5' / 2);`,
+    englishExplanation: "+ leads to string concatenation, other operators convert string to number.",
+    urduExplanation: "+ se string concat hoti hai, jabke - * / string ko number mein convert kar dete hain."
+  },
+  {
+    question: "5. Add null to numbers.",
+    code: `console.log(null + 2);\nconsole.log(5 + null);`,
+    englishExplanation: "Null is treated as 0 when used in arithmetic operations.",
+    urduExplanation: "Null ko arithmetic mein 0 samjha jata hai, is liye answer 2 aur 5 aata hai."
+  },
+  {
+    question: "6. Add undefined to a number.",
+    code: `console.log(undefined + 2);`,
+    englishExplanation: "Undefined cannot convert to a number, so result is NaN.",
+    urduExplanation: "Undefined number nahi ban sakta is liye result NaN aata hai."
+  },
+  {
+    question: "7. Concatenate multiple strings using template literals.",
+    code: `var a = 'Ali', b = 'genius', c = 'boy';\nconsole.log(\`\${a} is a \${b} \${c}\`);`,
+    englishExplanation: "Template literals combine multiple string variables in one statement.",
+    urduExplanation: "Template literals mein multiple strings aik hi line mein combine ki jati hain."
+  },
+  {
+    question: "8. Find the length of a string.",
+    code: `function number(a){\n  console.log(a.length);\n}\nnumber('ali');\nnumber('ali Khan');`,
+    englishExplanation: ".length returns the number of characters in a string.",
+    urduExplanation: ".length string ke andar kitne characters hain woh batata hai."
+  },
+  {
+    question: "9. Use parseInt() and parseFloat() with strings.",
+    code: `console.log(parseInt('ali'));\nconsole.log(parseFloat('Ali'));`,
+    englishExplanation: "If string doesn’t start with a number, parsing fails and returns NaN.",
+    urduExplanation: "Agar string number se start nahi hoti to parseInt ya parseFloat NaN return karta hai."
+  },
+  {
+    question: "10. Coerce boolean to string and do arithmetic.",
+    code: `var a = true;\nconsole.log(a + 2);\nconsole.log(a + 9);\nconsole.log(a - 1);\nvar b = true + '';\nconsole.log(b);`,
+    englishExplanation: "Boolean true acts like 1 in math; adding empty string converts it to 'true'.",
+    urduExplanation: "Boolean true ko 1 treat kiya jata hai; aur jab string se jora jaye to 'true' ban jata hai."
+  },
+  {
+    question: "11. Concatenate string with boolean value.",
+    code: `var online = 'user is online ' + false;\nconsole.log(online);`,
+    englishExplanation: "Boolean false is coerced to string 'false' and added to the original string.",
+    urduExplanation: "false ko string mein convert karke original string ke saath jor diya gaya."
+  },
+  {
+    question: "12. Convert string to boolean using Boolean().",
+    code: `console.log(Boolean(\"\"));\nconsole.log(Boolean(\"hello\"));`,
+    englishExplanation: "Empty string is false, any non-empty string is true.",
+    urduExplanation: "Khaali string false hoti hai, jabke koi bhi likhi hui string true hoti hai."
+  },
+  {
+    question: "13. Add boolean values.",
+    code: `console.log(true + true);\nconsole.log(false + 1);`,
+    englishExplanation: "true becomes 1, false becomes 0 in arithmetic operations.",
+    urduExplanation: "true 1 ke barabar aur false 0 ke barabar hota hai jab math operations kiye jayein."
+  },
+  {
+    question: "14. Subtract string from number where string is not numeric.",
+    code: `var subtracting = 'hello' - 2;\nconsole.log(subtracting);`,
+    englishExplanation: "Non-numeric strings can’t convert to numbers, so result is NaN.",
+    urduExplanation: "Non-number string ko jab minus kiya jaye to woh number nahi ban sakti, is liye NaN milta hai."
+  },
+  {
+    question: "15. Mixed expressions: guess result before running.",
+    code: `console.log('hello' + 2 + null + false);\nconsole.log(+2 + null + false + 'hai');`,
+    englishExplanation: "First expression coerces everything to string; second does math then adds string.",
+    urduExplanation: "Pehli expression mein sab kuch string ban gaya; doosri mein pehle numbers ka hisaab phir string add hui."
+  }
+];
+
+export let FunctionsQuest = [
+  {
+    question: "1. Create a function that logs 'Hai World'.",
+    code: `function greet() {\n  console.log("Hai World");\n}\ngreet();`,
+    englishExplanation: "A simple function `greet` prints a message when called using `greet()`.",
+    urduExplanation: "Ek simple function `greet` message print karta hai jab `greet()` se call kiya jata hai."
+  },
+  {
+    question: "2. Create a function that takes 2 numbers and adds them.",
+    code: `function sum(a, b) {\n  return console.log(a + b);\n}\nsum(1, 4);`,
+    englishExplanation: "The function takes two numbers and logs their sum.",
+    urduExplanation: "Function do numbers leta hai aur unka sum print karta hai."
+  },
+  {
+    question: "3. Return the result from a function and log it.",
+    code: `function result() {\n  return console.log("you are pass");\n}\nresult();`,
+    englishExplanation: "The function logs the message when called.",
+    urduExplanation: "Function call karne pe message print hota hai."
+  },
+  {
+    question: "4. Call a function with arguments and without.",
+    code: `function substract(a, b) {\n  return console.log(a - b);\n}\nsubstract();\nsubstract(5, 1);`,
+    englishExplanation: "Without arguments it gives NaN, with numbers it works correctly.",
+    urduExplanation: "Agar values na di jayein to NaN milega, warna result sahi aayega."
+  },
+  {
+    question: "5. Create a function with a default parameter.",
+    code: `function default_VAlue(a = "Ali khan is default") {\n  console.log(a);\n}\ndefault_VAlue();\ndefault_VAlue("Awais");`,
+    englishExplanation: "If no value is passed, the default is used.",
+    urduExplanation: "Agar koi value pass na ho to default value use hoti hai."
+  },
+  {
+    question: "6. Create a function that returns a string with name.",
+    code: `function name_greet(a) {\n  return console.log("welcome " + a);\n}\nname_greet("Ali");`,
+    englishExplanation: "The name is added to 'welcome' and printed.",
+    urduExplanation: "Naam 'welcome' ke sath jora jata hai aur print hota hai."
+  },
+  {
+    question: "7. Create a function that multiplies 3 numbers.",
+    code: `function multiple(a, b, c) {\n  console.log(a * b * c);\n}\nmultiple(3, 5, 6);`,
+    englishExplanation: "Multiplies three numbers and logs result.",
+    urduExplanation: "Teen numbers multiply kar ke result print karta hai."
+  },
+  {
+    question: "8. Write a function expression and call it.",
+    code: `var expression_fun = function sum(a, b) {\n  return console.log(a + b);\n};\nexpression_fun(2, 10);`,
+    englishExplanation: "Function is stored in a variable and called later.",
+    urduExplanation: "Function ko variable mein store kar ke call kiya gaya hai."
+  },
+  {
+    question: "9. Write an arrow function that adds two numbers.",
+    code: `sum = (a, b) => {\n  console.log(a + b);\n};\nsum(5, 4);`,
+    englishExplanation: "Arrow functions are concise alternatives to normal functions.",
+    urduExplanation: "Arrow functions short syntax hain function likhne ke liye."
+  },
+  {
+    question: "10. Store a function in a variable and call it.",
+    code: `store = () => {\n  console.log("hai every one");\n};\nstore();`,
+    englishExplanation: "The function is stored and called using its variable name.",
+    urduExplanation: "Function ko store karke usi naam se call kiya gaya hai."
+  },
+  {
+    question: "11. Create a function that checks even or odd.",
+    code: `num_checker = (a) => {\n  if (a % 2 === 0) {\n    console.log(a + " is even Number");\n  } else {\n    console.log(a + " is Odd Number");\n  }\n};\nnum_checker(4);\nnum_checker(15);`,
+    englishExplanation: "Checks if number is even or odd using `%` operator.",
+    urduExplanation: "Modulus `%` operator se even/odd check karta hai."
+  },
+  {
+    question: "12. Call a function inside another function.",
+    code: `function_inner = (a) => {\n  num_checker(a);\n};\nfunction_inner(45);`,
+    englishExplanation: "One function calls another function inside it.",
+    urduExplanation: "Ek function ke andar dusra function call hota hai."
+  },
+  {
+    question: "13. Use a function in a conditional statement.",
+    code: `num_checker = (a) => {\n  if (a % 2 === 0) {\n    console.log(a + " is even Number");\n  } else {\n    console.log(a + " is Odd Number");\n  }\n};\nnum_checker(4);\nnum_checker(15);`,
+    englishExplanation: "Function used in condition to print based on value.",
+    urduExplanation: "Condition check karke even ya odd number ka message deta hai."
+  },
+  {
+    question: "14. Loop through an array inside a function.",
+    code: `function printFruits() {\n  const fruits = ["Apple", "Banana", "Mango", "Grapes"];\n  for (let i = 0; i < fruits.length; i++) {\n    console.log(fruits[i]);\n  }\n}\nprintFruits();`,
+    englishExplanation: "Loop inside function prints all fruits from array.",
+    urduExplanation: "Loop ke zariye array ke tamam items print kiye ja rahe hain."
+  },
+  {
+    question: "15. Return an object from a function.",
+    code: `function createUser(name, age) {\n  return {\n    username: name,\n    userAge: age,\n    isAdult: age >= 18\n  };\n}\nconst user = createUser("Ali", 22);\nconsole.log(user);`,
+    englishExplanation: "Function returns an object with user info and a calculated property.",
+    urduExplanation: "Function aik object return karta hai jisme user ka data aur adult check hota hai."
+  }
+];

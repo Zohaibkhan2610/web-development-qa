@@ -14,13 +14,7 @@ const topics = [
     color: "bg-purple-500",
     path: "/javascript/datatypes"
   },
-  {
-    title: "Advanced Data Types",
-    description: "Explore complex types like Objects, Arrays, and special values like NaN and Infinity.",
-    color: "bg-indigo-500",
-    path: "/javascript/advanced-datatypes"
-  },
-  {
+    {
     title: "Concatenation & Type Coercion",
     description: "See how JavaScript converts values automatically and how to concatenate strings and numbers.",
     color: "bg-green-500",
